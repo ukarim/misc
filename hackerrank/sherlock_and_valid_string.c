@@ -29,9 +29,9 @@ int main(void) {
     map[map_idx] = num + 1;
   }
 
-  for (int i = 0; i < ALPHABET_LEN; i++) {
-    printf("%c - %d\n", 'a' + i, map[i]);
-  }
+  // for (int i = 0; i < ALPHABET_LEN; i++) {
+  //   printf("%c - %d\n", 'a' + i, map[i]);
+  // }
 
   int uniq_char_count = 0;
   for (int i = 0; i < ALPHABET_LEN; i++) {
