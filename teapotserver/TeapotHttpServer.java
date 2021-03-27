@@ -13,10 +13,10 @@ import java.util.logging.Logger;
 public class TeapotHttpServer {
 
     private static final String TEAPOT_HTTP_RESP_STR =
-            "HTTP/1.1 418 I'm a teapot\n" +
-            "Content-Length: 130\n" +
-            "Content-Type: text/html\n" +
-            "Server: java-nio\n\n" +
+            "HTTP/1.1 418 I'm a teapot\r\n" +
+            "Content-Length: 130\r\n" +
+            "Content-Type: text/html\r\n" +
+            "Server: java-nio\r\n\r\n" +
             "<!doctype html><html><head><meta charset=\"utf-8\"><title>418 I'm teapot</title></head><body><h1>418 I'm a teapot</h1></body></html>";
 
     private static final byte[] TEAPOT_HTTP_RESP_BYTES = TEAPOT_HTTP_RESP_STR.getBytes(StandardCharsets.UTF_8);
@@ -204,11 +204,8 @@ class HttpMessageParser {
     public void consume(ByteBuffer byteBuffer) {
         byteBuffer.flip(); // switch to read-mode
 
-        // copy bytes
-        for (int i = 0; i < byteBuffer.limit(); i++) {
-            // NOTE!!! only works for one-byte characters
-            this.messageCollector.append((char) byteBuffer.get(i));
-        }
+        String messagePart = StandardCharsets.UTF_8.decode(byteBuffer).toString();
+        this.messageCollector.append(messagePart);
 
         if (checkIsFullyRead()) {
             String fullHttpMessage = messageCollector.toString();
