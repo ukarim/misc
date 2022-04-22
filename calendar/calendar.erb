@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= tmpl_params[:month] %> <%= tmpl_params[:year] %></title>
+  <link rel="stylesheet" type="text/css" href="calendar.css">
+</head>
+<body>
+
+<div class="calendar" style="background-image: url('<%= tmpl_params[:background] %>')">
+  <div class="month-indicator">
+    <%= tmpl_params[:month] %> <%= tmpl_params[:year] %>
+  </div>
+
+  <div class="day-of-week">
+    <div>пн</div>
+    <div>вт</div>
+    <div>ср</div>
+    <div>чт</div>
+    <div>пт</div>
+    <div>сб</div>
+    <div>вс</div>
+  </div>
+
+  <div class="date-grid">
+    <% for item in tmpl_params[:days] %>
+      <span class="<%= item[1] %>"><%= item[0] %></span>
+    <% end %>
+  </div>
+</div>
+
+</body>
+</html>
