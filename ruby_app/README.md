@@ -4,11 +4,11 @@ Explore ruby/sinatra as a tech stack for fast prototyping and small apps.
 
 ### Things to check
 
-[ ] DB access (postgres, mysql, maybe oracle)
-[ ] DB connection pooling
-[ ] http client
-[x] docker image creation
-[ ] logger with custom format (and MDC)
+- [ ] DB access (postgres, mysql, maybe oracle)
+- [ ] DB connection pooling
+- [x] http client
+- [x] docker image creation
+- [ ] logger with custom format (and MDC)
 ...
 
 ### Run locally
