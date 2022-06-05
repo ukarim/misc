@@ -1,0 +1,6 @@
+PATH="$HOME/bin:$PATH"
+
+alias cal="cal --monday"
+alias l="ls -1a"
+alias c99='gcc -Wall -Wextra -std=c99 -pedantic -Wmissing-prototypes -Wstrict-prototypes -Wold-style-definition'
+
