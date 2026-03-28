@@ -1,3 +1,5 @@
+// Rust Bytes Challenge Issue #87 String Compression
+
 fn main() {
     let input = "abbcccddddeeeeefg";
     if input.is_empty() {
@@ -8,7 +10,7 @@ fn main() {
     let mut prev = chars.next().unwrap(); // it's safe, string is not empty
     let mut count = 1;
     let mut output = String::new();
-    while let Some(curr) = chars.next() {
+    for curr in chars {
         if prev == curr {
             count = count + 1;
         } else {

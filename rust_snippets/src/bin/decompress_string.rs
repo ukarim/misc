@@ -1,3 +1,5 @@
+// Rust Bytes Challenge Issue #89 String Decode
+
 fn main() {
     let input = "a1b2c3d4e5f1g1";
     let (mut output, _, _) = input
