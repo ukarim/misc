@@ -10,7 +10,7 @@ public final class IdNumberUtils {
     private static final int[] FIRST_CHECKSUM_INDEXES = new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     // numbers order for second checksum generation
-    private static final int[] SECOND_CHECKSUM_INDEXES = new int[] {2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 1};
+    private static final int[] SECOND_CHECKSUM_INDEXES = new int[] {9, 10, 0, 1, 2, 3, 4, 5, 6, 7, 8};
 
     // if checksum equals to this value then we should retry
     private static final int RETRY_CHECKSUM = 10;
